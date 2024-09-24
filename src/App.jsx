@@ -33,15 +33,13 @@ const App = () => {
 
   // Edit a todo by index and pre-fill the prompt with the current value
   function handleEditTodo(index) {
-    const currentTodo = selector[index].title;
-    console.log("Current Todo:", currentTodo); // Log the current todo
-    const editVal = prompt("Edit the todo", currentTodo);
+    const editVal = prompt("Enter the edited the value");
     if (editVal && editVal.trim() !== "") {
       console.log("New value:", editVal); // Log the new value
       dispatch(
         editTodo({
           index,
-          editVal: editVal.trim(),
+          editVal,
         })
       );
     }
